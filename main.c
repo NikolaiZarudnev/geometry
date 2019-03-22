@@ -9,24 +9,48 @@ typedef struct {
 	float r;
 }Circle;
 
+ float string_to_float(char c[])
+ {
+	int i;
+	float n,v;
+	for (i = 0; !(c[i] >= '0' && c[i] <= '9'); i++) {
+		if (c[i] == '\0'){
+			return 0;
+		}
+	}
+	for (n = 0; c[i] >= '0' && c[i] <= '9'; i++) {
+			n = n * 10 + c[i] - '0';
+	}
+	if (c[i] != '.') {
+		return n;
+	}
+	for (i++, v = 0.1; c[i] >= '0' && c[i] <= '9'; i++){
+		n += v * (c[i] - '0'); 
+		v = v / 10;                               
+	}
+	return n;
+}
+
 Circle circle_input()
 {
 	Circle shape;
-	printf("Enter x and y:\n");
-	scanf("%f %f", &shape.x, &shape.y);
-	printf("Enter radius\n");
-	scanf("%f", &shape.r);
+	char stringNAME[20];
+	float shapexyr[3];
+	printf("enter circle(x, y, radius)\n");
+	fgets(stringNAME, 20, stdin);
+	if (!strcmp(stringNAME, "circle(%f, %f, %f")) {                     //входные данные???
+		printf("error\n");
+	}
 	return shape;
 }
 
 int cross_circle(Circle shape1, Circle shape2)
 {
 	if ((sqrt(pow((shape1.x - shape2.x), 2) + pow((shape1.y - shape2.y), 2)) < shape1.r + shape2.r) && 
-		(sqrt(pow((shape1.x - shape2.x), 2) + pow((shape1.y - shape2.y), 2)) > abs(shape1.r - shape2.r))) {
+		(sqrt(pow((shape1.x - shape2.x), 2) + pow((shape1.y - shape2.y), 2)) > abs(shape1.r - shape2.r)))
         return 1;
-    } else {
+    else
         return 0;
-    }
 }
 
 void description_circle(Circle shape1, Circle shape2)   
@@ -37,7 +61,7 @@ void description_circle(Circle shape1, Circle shape2)
 	if(cross_circle(shape1, shape2)) {
 		printf("intersects:\n");
 		printf("  \n");                                         //оформление вывода???
-	} else {
+	}else{
 		printf("no intersects\n");
 	}
 }
