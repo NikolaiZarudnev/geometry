@@ -38,7 +38,7 @@ Circle circle_input()
 	float circlexyr[3];
 	printf("enter circle(x, y, radius)\n");
 	fgets(stringNAME, 25, stdin);
-	if (!strcmp(stringNAME, "circle(%f, %f, %f")) {                     //входные данные???
+	if (strcmp(stringNAME, "circle(%f, %f, %f")) {                     //входные данные???
 		printf("error\n");
 	}
 	for (int i = 0; i < 3; ++i) {
