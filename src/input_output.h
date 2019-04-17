@@ -8,6 +8,6 @@ typedef struct {
     float r;
 } Circle;
 
-float string_to_float(char* c, int x)
+float string_to_float(char* c, int x);
 
-Circle circle_input()
+Circle circle_input();

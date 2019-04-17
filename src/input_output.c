@@ -31,9 +31,11 @@ Circle circle_input()
     Circle shape;
     char string_name[25];
     float circle_xyr[3];
-    printf("enter circle(x, y, radius)\n");
+    printf("enter: 'circle(x, y, radius)'\n");
     fgets(string_name, 25, stdin);
-    if (strcmp(string_name, "circle(%f, %f, %f")) { //входные данные???
+    if (strcmp(string_name, "circle(%f, %f, %f)")) { 
+    	printf("error\n");
+    	return -1;
     }
     for (int i = 0; i < 3; ++i) {
         circle_xyr[i] = string_to_float(string_name, 25);
