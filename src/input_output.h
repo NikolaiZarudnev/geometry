@@ -1,3 +1,5 @@
+#ifndef H_INPUT_OUTPUT
+#define H_INPUT_OUTPUT
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,5 +11,5 @@ typedef struct {
 } Circle;
 
 float string_to_float(char* c, int x);
-
 Circle circle_input();
+#endif

@@ -1,7 +1,5 @@
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "description_shape.h"
+#include "input_output.h"
 
 int cross_circle(Circle shape1, Circle shape2)
 {

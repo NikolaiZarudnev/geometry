@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "input_output.h"
 #include "description_shape.h"
 
