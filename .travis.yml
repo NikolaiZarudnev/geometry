@@ -1,0 +1,7 @@
+os: linux
+language: c
+compiler: gcc
+dist: xenial
+script: 
+  - make && make geometry
+  - git ls-files src/ | xargs clang-format -i && git diff --exit-code

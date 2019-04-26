@@ -1,3 +1,4 @@
+.PHONY: all clean install uninstall
 CCFLAGS := -Wall -Wextra
 SRC_DIR := ./src
 BIN_DIR := ./bin
