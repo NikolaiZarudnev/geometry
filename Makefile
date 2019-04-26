@@ -26,4 +26,4 @@ install:
 	install bin/geometry $(INSTALL_PATH)
 
 uninstall:
-	rm -rf $(INSTALL_PATH)/chess
+	rm -rf $(INSTALL_PATH)/geometry
