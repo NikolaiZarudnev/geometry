@@ -6,19 +6,17 @@ OBJ_DIR := ./build
 
 all: $(BIN_DIR)/geometry
 
-
-$(BIN_DIR)/geometry:  $(OBJ_DIR)/main.o  $(OBJ_DIR)/input_output.o  $(OBJ_DIR)/description_shape.o
-	gcc $(CCFLAGS)  $(OBJ_DIR)/main.o  $(OBJ_DIR)/input_output.o  $(OBJ_DIR)/description_shape.o -o  $(BIN_DIR)/geometry -lm 
-
+$(BIN_DIR)/geometry: $(OBJ_DIR)/main.o $(OBJ_DIR)/input_output.o $(OBJ_DIR)/description_shape.o
+	gcc $(CCFLAGS) $(OBJ_DIR)/main.o $(OBJ_DIR)/input_output.o $(OBJ_DIR)/description_shape.o -o $(BIN_DIR)/geometry -lm 
 
 $(OBJ_DIR)/main.o: $(SRC_DIR)/main.c
-	gcc $(CCFLAGS) -c  $(SRC_DIR)/main.c -o  $(OBJ_DIR)/main.o 
+	gcc $(CCFLAGS) -c $(SRC_DIR)/main.c -o $(OBJ_DIR)/main.o 
 
 $(OBJ_DIR)/input_output.o: $(SRC_DIR)/input_output.c
-	gcc $(CCFLAGS) -c  $(SRC_DIR)/input_output.c -o  $(OBJ_DIR)/input_output.o -lm
+	gcc $(CCFLAGS) -c $(SRC_DIR)/input_output.c -o $(OBJ_DIR)/input_output.o -lm
 
 $(OBJ_DIR)/description_shape.o: $(SRC_DIR)/description_shape.c
-	gcc $(CCFLAGS) -c  $(SRC_DIR)/description_shape.c -o  $(OBJ_DIR)/description_shape.o -lm
+	gcc $(CCFLAGS) -c $(SRC_DIR)/description_shape.c -o $(OBJ_DIR)/description_shape.o -lm
 
 clean:
 	find -name "*.o" -exec rm -rf {} +
