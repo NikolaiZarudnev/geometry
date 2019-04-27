@@ -32,7 +32,6 @@ Circle circle_input()
     fgets(string_name, 25, stdin);
     if (!strcmp(string_name, "circle(%f, %f, %f)")) { 
     	printf("error\n");
-    	break;
     }
     for (int i = 0; i < 3; ++i) {
         circle_xyr[i] = string_to_float(string_name, 25);
