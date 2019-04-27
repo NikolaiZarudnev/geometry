@@ -19,7 +19,7 @@ void description_circle(Circle shape1, Circle shape2)
 
     if (cross_circle(shape1, shape2)) {
         printf("intersects with 2. circle\n");
-        printf("  \n"); //оформление вывода???
+        printf("  \n");
     } else {
         printf("no intersects\n");
     }
