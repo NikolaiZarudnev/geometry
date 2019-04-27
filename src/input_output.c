@@ -2,7 +2,6 @@
 
 float string_to_float(char* c, int i)
 {
-    
     float n, v;
     for (i = 0; !(c[i] >= '0' && c[i] <= '9'); i++) {
         if (c[i] == '\0') {
@@ -30,8 +29,8 @@ Circle circle_input()
     float circle_xyr[3];
     printf("enter: 'circle(x, y, radius)'\n");
     fgets(string_name, 25, stdin);
-    if (!strcmp(string_name, "circle(%f, %f, %f)")) { 
-    	printf("error\n");
+    if (!strcmp(string_name, "circle(%f, %f, %f)")) {
+        printf("error\n");
     }
     for (int i = 0; i < 3; ++i) {
         circle_xyr[i] = string_to_float(string_name, 25);
