@@ -19,13 +19,6 @@ $(OBJ_DIR)/input_output.o: $(SRC_DIR)/input_output.c
 $(OBJ_DIR)/description_shape.o: $(SRC_DIR)/description_shape.c
 	gcc $(CCFLAGS) -c $(SRC_DIR)/description_shape.c -o $(OBJ_DIR)/description_shape.o -lm
 
-$(SRC_DIR):
-	mkdir src
-$(BIN_DIR):
-	mkdir bin
-$(OBJ_DIR):
-	mkdir build
-
 clean:
 	rm -rf $(OBJ_DIR)/*.o
 
