@@ -20,6 +20,7 @@ float string_to_float(char* c, int i)
         }
         return n;
     }
+    return 0;
 }
 
 Circle circle_input()

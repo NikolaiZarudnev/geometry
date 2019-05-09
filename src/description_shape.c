@@ -18,8 +18,7 @@ void description_circle(Circle shape1, Circle shape2)
     printf("area: %.2f\n", (M_PI * shape1.r * shape1.r));
 
     if (cross_circle(shape1, shape2)) {
-        printf("intersects with 2. circle\n");
-        printf("  \n");
+        printf("intersects\n");
     } else {
         printf("no intersects\n");
     }
