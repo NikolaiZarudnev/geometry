@@ -1,28 +1,28 @@
 .PHONY: all clean install uninstall
-CCFLAGS := -Wall -Wextra
-SRC_DIR := ./src
-BIN_DIR := ./bin
-OBJ_DIR := ./build
+CC = gcc
+CFLAGS = -Wall -Werror
+GEOMETRY := ./bin/geometry
 INSTALL_PATH := /usr/local/bin
+BUILD_SRC_DIR := ./build/src
 
-all: $(BIN_DIR)/geometry
+all: $(GEOMETRY)
 
-$(BIN_DIR)/geometry: $(OBJ_DIR)/main.o $(OBJ_DIR)/input_output.o $(OBJ_DIR)/description_shape.o
-	gcc $(CCFLAGS) $(OBJ_DIR)/main.o $(OBJ_DIR)/input_output.o $(OBJ_DIR)/description_shape.o -o $(BIN_DIR)/geometry -lm
+$(GEOMETRY): $(BUILD_SRC_DIR)/main.o $(BUILD_SRC_DIR)/input_output.o $(BUILD_SRC_DIR)/description_shape.o
+	gcc $(CCFLAGS) $(BUILD_SRC_DIR)/main.o $(BUILD_SRC_DIR)/input_output.o $(BUILD_SRC_DIR)/description_shape.o -o $(GEOMETRY) -lm
 
-$(OBJ_DIR)/main.o: $(SRC_DIR)/main.c
-	gcc $(CCFLAGS) -c $(SRC_DIR)/main.c -o $(OBJ_DIR)/main.o
+$(BUILD_SRC_DIR)/main.o: src/main.c
+	gcc $(CCFLAGS) -c src/main.c -o $(BUILD_SRC_DIR)/main.o
 
-$(OBJ_DIR)/input_output.o: $(SRC_DIR)/input_output.c
-	gcc $(CCFLAGS) -c $(SRC_DIR)/input_output.c -o $(OBJ_DIR)/input_output.o -lm
+$(BUILD_SRC_DIR)/input_output.o: src/input_output.c
+	gcc $(CCFLAGS) -c src/input_output.c -o $(BUILD_SRC_DIR)/input_output.o -lm
 
-$(OBJ_DIR)/description_shape.o: $(SRC_DIR)/description_shape.c
-	gcc $(CCFLAGS) -c $(SRC_DIR)/description_shape.c -o $(OBJ_DIR)/description_shape.o -lm
+$(BUILD_SRC_DIR)/description_shape.o: src/description_shape.c
+	gcc $(CCFLAGS) -c src/description_shape.c -o $(BUILD_SRC_DIR)/description_shape.o -lm
 
 clean:
-	rm -rf $(OBJ_DIR)/*.o
+	rm -rf $(BUILD_SRC_DIR)/*.o bin/geometry
 
-install:
+install: 
 	install bin/geometry $(INSTALL_PATH)
 
 uninstall:
