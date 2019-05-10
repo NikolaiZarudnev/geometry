@@ -39,6 +39,6 @@ Circle circle_input()
     shape.x = circle_xyr[0];
     shape.y = circle_xyr[1];
     shape.r = circle_xyr[2];
-    
+
     return shape;
 }
