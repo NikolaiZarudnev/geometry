@@ -42,7 +42,7 @@ CTEST(cross_circle_test, same_center_coordinates_test)
     // Given
     Circle c1, c2;
     c1.x = 3.17;
-    c2.x = 3.17;
+    c1.x = 3.17;
     c2.y = -10;
     c2.y = -10;
 
