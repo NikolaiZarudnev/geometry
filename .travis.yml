@@ -1,7 +1,9 @@
-os: linux
 language: c
-compiler: gcc
-dist: xenial
-script: 
-  - make && make test && make run_test
+
+script:
+  - make && make run && make run_test
   - git ls-files src/ | xargs clang-format -i && git diff --exit-code
+
+compiler: gcc
+
+dist: xenial
