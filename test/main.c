@@ -45,6 +45,8 @@ CTEST(cross_circle_test, same_center_coordinates_test)
     c2.x = 3.17;
     c1.y = -10;
     c2.y = -10;
+    c1.r = 0;
+    c2.r = 0;
 
     // When
     const float result = cross_circle(c1, c2);
